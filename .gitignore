@@ -1,3 +1,5 @@
+#Hide API keys
+config.js
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

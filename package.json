@@ -1,0 +1,22 @@
+{
+  "name": "cable-one-twitter-complainer",
+  "version": "1.0.0",
+  "description": "Node.js implementation of ISP Twitter complainer from Reddit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exoentropy/cable-one-twitter-complainer.git"
+  },
+  "author": "Scott Enriquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exoentropy/cable-one-twitter-complainer/issues"
+  },
+  "homepage": "https://github.com/exoentropy/cable-one-twitter-complainer#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

@@ -1,5 +1,5 @@
 #Hide API keys
-config.js
+./server/configs/twitter-api-config.js
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

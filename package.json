@@ -23,6 +23,7 @@
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
+    "font-awesome": "^4.5.0",
     "jade": "^1.11.0",
     "jquery": "^2.2.0",
     "promise": "^7.1.1",

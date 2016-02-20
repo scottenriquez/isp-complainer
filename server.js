@@ -10,7 +10,7 @@ app.use(BodyParser());
 //deliver static content from the public directory
 app.use(Express.static(__dirname + '/public/'));
 app.use(Express.static(__dirname + '/node_modules/'));
-app.get('/partials/:partialPath', function(request, response){
+app.get('/partials/:partialPath', function(request, response) {
 	response.render('partials/' + request.params.partialPath);
 });
 app.set('port', port);

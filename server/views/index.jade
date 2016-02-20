@@ -3,16 +3,17 @@ extends ../includes/layout
 block main-content
         head
                 title ISP Complainer Dashboard
-        body
-        nav(class = "navbar navbar-inverse navbar-fixed-top", role="navigation")
-                div(class = "container")
-                        div(class = "navbar-header page-scroll")
-                                button(type = "button", class = "navbar-toggle", data-toggle = "collapse", data-target = ".navbar-main-collapse")
-                                        i(class = "fa fa-bars")
-                                a(class = "navbar-brand", href = "/") ISP Complainer Dashboard
-                        div(class = "collapse navbar-collapse navbar-right navbar-main-collapse")
-                                ul(class = "nav navbar-nav")
-                                        li
-                                                <a href = "http://scottie.io"> <i class = "fa fa-book"></i> Documentation</a>
-                                        li
-                                                <a href = "mailto:scottie@enriquez.io"> <i class = "fa fa-envelope"></i> Contact</a>
+        body(ng-app = "ispComplainer")
+                nav(class = "navbar navbar-inverse navbar-fixed-top", role = "navigation", data-spy = "affix", data-offset-top = "205")
+                        div(class = "container")
+                                div(class = "navbar-header page-scroll")
+                                        button(type = "button", class = "navbar-toggle", data-toggle = "collapse", data-target = ".navbar-main-collapse")
+                                                i(class = "fa fa-bars")
+                                        a(class = "navbar-brand", href = "/") <i class="fa fa-wifi"></i>　ISP Complainer Dashboard
+                                div(class = "collapse navbar-collapse navbar-right navbar-main-collapse")
+                                        ul(class = "nav navbar-nav")
+                                                li
+                                                        <a href = "http://scottie.io"> <i class = "fa fa-book"></i> Documentation</a>
+                                                li
+                                                        <a href = "mailto:scottie@enriquez.io"> <i class = "fa fa-envelope"></i> Contact</a>
+                div(ng-view)

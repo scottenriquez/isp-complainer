@@ -8,7 +8,8 @@ app.set('views', __dirname + '/server/views');
 app.set('view engine', 'jade');
 app.use(BodyParser());
 //deliver static content from the public directory
-app.use(express.static(__dirname + '/public/'));
+app.use(Express.static(__dirname + '/public/'));
+app.use(Express.static(__dirname + '/node_modules/'));
 app.get('/partials/:partialPath', function(request, response){
 	response.render('partials/' + request.params.partialPath);
 });
@@ -19,6 +20,6 @@ app.get('/api/complain', function(request, response) {
 	});
 });
 app.get('*', function (request, response) {
-	request.render('index');
+	response.render('index');
 });
 app.listen(port);

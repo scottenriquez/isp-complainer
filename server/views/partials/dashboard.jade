@@ -5,16 +5,7 @@ div(class = "container")
         div(class = "row")
                 div(class = "col-md-12")
                         button(type = "button", class = "btn btn-lg btn-danger", ng-click = "manualTrigger()") Run
-        div(class = "row")
-                div(class = "col-md-12")
-                        br
-                        table(class = "table table-striped")
-                                tr
-                                        th Download Speed
-                                        th Upload Speed
-                                        th IP Address
-                                        th Speedtest Location
-                                        th Distance in Miles
-                                        th Ping
-                                        th Tweet Created
-                                div(id = "manual-trigger-results")
+                        h2 <i ng-show = "loading" class = "fa fa-refresh fa-spin"></i> <span ng-show = "loading">Testing your speed...</span>
+                div(class = "col-md-12 page-header")
+                        h3 Output
+                        div(id = "manual-trigger-results")

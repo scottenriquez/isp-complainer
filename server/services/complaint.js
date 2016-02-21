@@ -10,7 +10,6 @@ module.exports = {
                                 var actualSpeed = data.speeds.download;
                                 if(actualSpeed < promisedSpeed) {
                                         Services.twitter.complain(actualSpeed).done(function(response) {
-                                                console.log(response);
                                                 fulfill({
                                                         downloadSpeed: actualSpeed,
                                                         uploadSpeed: data.speeds.upload,
@@ -20,6 +19,17 @@ module.exports = {
                                                         ping: data.server.ping,
                                                         twitterPostResponseCode: response.statusCode
                                                 });
+                                        });
+                                }
+                                else {
+                                        fulfill({
+                                                downloadSpeed: actualSpeed,
+                                                uploadSpeed: data.speeds.upload,
+                                                ipAddress: data.client.ip,
+                                                testLocation: data.server.location,
+                                                distance: data.server.distance,
+                                                ping: data.server.ping,
+                                                twitterPostResponseCode: 'Tweet not required'
                                         });
                                 }
                         });

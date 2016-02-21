@@ -3,7 +3,7 @@ module.exports = {
 	    return ispHandle + ' I pay for ' + promisedSpeed + 'mbps down, but am getting ' + actualSpeed + 'mbps.';
 	  },
 	  ispHandle: function() {
-	    return '@cableONE';
+	    return '@exoentropy';
 	  },
 	promisedSpeed: function() {
 		return 100.0;

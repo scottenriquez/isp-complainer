@@ -19,6 +19,11 @@ app.get('/api/complain', function(request, response) {
 		response.json(output);
 	});
 });
+app.get('/api/speedtest', function(request, response) {
+	Services.speedtest.run().done(function(output){
+		response.json(output);
+	});
+});
 app.get('*', function (request, response) {
 	response.render('index');
 });

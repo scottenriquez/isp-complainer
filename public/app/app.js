@@ -11,6 +11,19 @@ angular.module('ispComplainer').config(function($routeProvider, $locationProvide
         $routeProvider.otherwise({ templateUrl: '/partials/dashboard.jade', controller: 'DashboardController' });
 });
 
-angular.module('ispComplainer').controller('DashboardController', function($scope, $http) {
-        $scope.title = 'ayy lmao';
+angular.module('ispComplainer').controller('DashboardController', function($scope, $http, $timeout, ComplaintService) {
+        $scope.manualTrigger = function() {
+                ComplaintService.run().then(function(result) {
+                        var compiledHTML = $compile("<h1>ayyyyy</h1>")($scope);
+                        $("manual-trigger-results").append(compiledHTML);
+                });
+        };
+});
+
+angular.module('ispComplainer').factory('ComplaintService', function($http) {
+        return {
+                run: function() {
+                        return $http.get('/api/complain');
+                }
+        }
 });

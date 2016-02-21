@@ -8,7 +8,11 @@ module.exports = {
                         Services.speedtest.run().done(function(data) {
                                 var promisedSpeed = Config.complaintConfig.promisedSpeed();
                                 var actualSpeed = data.speeds.download;
-                                if(actualSpeed < promisedSpeed) {
+                                var thresholdPercentage = Config.complaintConfig.threshold();
+                                if(thresholdPercentage < 0 || thresholdPercentage > 100) {
+                                        thresholdPercentage = 100.0;
+                                }
+                                if(actualSpeed < promisedSpeed * thresholdPercentage) {
                                         Services.twitter.complain(actualSpeed).done(function(response) {
                                                 fulfill({
                                                         downloadSpeed: actualSpeed,

@@ -13,7 +13,7 @@ angular.module('ispComplainer').config(function($routeProvider, $locationProvide
 
 angular.module('ispComplainer').controller('DashboardController', function($scope, $http, $compile, ComplaintService) {
         $scope.manualTrigger = function() {
-                $scope.loading = true;
+                $scope.manualLoading = true;
                 ComplaintService.run().then(function(result) {
                         var compiledHTML = $compile(
                                 "<table class = 'table table-striped'><tr><th>Download Speed</th><th>Upload Speed</th><th>IP Address</th><th>Test Location</th><th>Distance</th><th>Ping</th><th>Twitter Post Status Code</th></tr>"
@@ -25,8 +25,11 @@ angular.module('ispComplainer').controller('DashboardController', function($scop
                                 + "<td>" + result.data.ping + "</td>"
                                 + "<td>" + result.data.twitterPostResponseCode + "</td></tr></table>")($scope);
                         $("#manual-trigger-results").append(compiledHTML);
-                        $scope.loading = false;
+                        $scope.manualLoading = false;
                 });
+        };
+        $scope.schedule = function() {
+                
         };
 });
 

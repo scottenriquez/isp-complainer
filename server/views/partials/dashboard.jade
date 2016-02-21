@@ -13,6 +13,7 @@ div(class = "container")
                                                 div(class = "col-md-12")
                                                         button(type = "button", class = "btn btn-lg btn-success", ng-click = "manualTrigger()") Run Test
                                                         h2 <i ng-show = "manualLoading" class = "fa fa-refresh fa-spin"></i> <span ng-show = "manualLoading">Testing your speed...</span>
+                                                        br
                                                         h2 View Output
                                                         div(id = "manual-trigger-results")
                 div(class = "panel panel-default")
@@ -21,23 +22,32 @@ div(class = "container")
                                         a(data-toggle = "collapse", data-parent = "accordion", href = "#schedule") Schedule
                         div(id = "schedule", class = "panel-collapse collapse in")
                                 div(class = "panel-body")
+                                        div(class = "not-scheduled", ng-show = "!scheduled")
+                                                div(class = "row")
+                                                        div(class = "col-md-12")
+                                                                h4 Interval Length
+                                                                select(name = "interval", ng-model = "intervalLength", required)
+                                                                        option(value = "15") 15 minutes
+                                                                        option(value = "30") 30 minutes
+                                                                        option(value = "60") 60 minutes
+                                                                        option(value = "120") 120 minutes
+                                                br
+                                                div(class = "row")
+                                                        div(class = "col-md-12")
+                                                                button(type = "button", class = "btn btn-lg btn-success", ng-click = "schedule()") Start Schedule
+                                                                h2 <i ng-show = "scheduleLoading" class = "fa fa-refresh fa-spin"></i> <span ng-show = "scheduleLoading">Testing your speed...</span>
+                                        div(class = "scheduled", ng-show = "scheduled")
+                                                div(class = "row")
+                                                        div(class = "col-md-12")
+                                                                h2 <span style = "color: green"><i class="fa fa-check-circle"></i> Success</span>
+                                                                h4 {{intervalLength}}-minute intervals starting on {{scheduleStartDate}} at {{scheduleStartTime}}
+                                                                br
+                                                                button(type = "button", class = "btn btn-lg btn-danger", ng-click = "cancelSchedule()") Cancel Schedule
                                         div(class = "row")
                                                 div(class = "col-md-12")
-                                                        h4 Interval Length
-                                                        select(name = "interval", ng-model = "intervalLength")
-                                                                option(value = "1") one-hour
-                                                                option(value = "2") two-hour
-                                                                option(value = "3") three-hour
-                                                                option(value = "4") four-hour
-                                                        h4 Number of Intervals
-                                                        input(ng-model = "numIntervals")
-                                        br
-                                        div(class = "row")
-                                                div(class = "col-md-12")
-                                                        button(type = "button", class = "btn btn-lg btn-success", ng-click = "schedule()") Start Schedule
-                                                        h2 <i ng-show = "scheduleLoading" class = "fa fa-refresh fa-spin"></i> <span ng-show = "scheduleLoading">Testing your speed...</span>
                                                         h2 View Output
                                                         div(id = "schedule-results")
+                                                
         div(class = "row")
                 div(class = "col-md-12")
                         p <center>[<i class="fa fa-code"></i>'d with love by <a href = "http://scottie.io">scottie.io</a>]</center>

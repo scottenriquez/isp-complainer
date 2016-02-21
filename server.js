@@ -1,6 +1,6 @@
 var Express = require('express');
 var BodyParser = require('body-parser');
-var Services = require('../cable-one-twitter-complainer/server/services');
+var Services = require('../isp-complainer/server/services');
 var port = process.env.PORT || 3030;
 var environment = process.env.NODE_ENV || 'development';
 var app = Express();

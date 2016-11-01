@@ -34,7 +34,8 @@ Once you have your keys, you.ll need to add them to a file called /server/config
 
 ## twitter-api-config-template.js
 
-```module.exports = {
+```
+module.exports = {
 	twitterConsumerKey: function() {
 		return '';
 	twitterConsumerSecret: function() {
@@ -53,7 +54,8 @@ One other config must be modified before use:
 
 ## complaint-config.js
 
-```module.exports = {
+```
+module.exports = {
 	tweetBody: function(promisedSpeed, actualSpeed, ispHandle) {
 		return ispHandle + ' I pay for ' + promisedSpeed + 'mbps down, but am getting ' + actualSpeed + 'mbps.';
 	ispHandle: function() {
